@@ -10,29 +10,12 @@
    - **Observability**: An open-source monitoring solution designed to operate natively within Kubernetes clusters, providing comprehensive visibility into the performance, health, and resource utilization of deployed applications and cluster components through metrics, visualization, and alerting capabilities.
    - **Model Deployments**: Automated deployment and management of AI LLM models within the Kubernetes inference cluster, enabling scalable and reliable AI inference capabilities.
    
-## Table of Contents
--   [Usage](#usage)
--   [Support](#support)
--   [License](#license)
--   [Security](#security)
--   [Trademark Information](#trademark-information)
+🧩 Config
+```
+✅ ***
+✅ ***
+✅ ***
+✅ ***
+```
 
 
-## Usage
-The Usage instructions for the AI Inference as a Service Deployment Automation can be found in the [docs/README.md](docs/README.md) file.
-To setup, follow the step-by-step instructions provided in the `docs/README.md` file.
-
-## Support
-For feature requests, bugs or questions about the project, [open an issue](https://github.com/opea-project/Enterprise-Inference/issues) on the GitHub Issues page. Provide as much details as possible, including steps to reproduce the issue, expected behavior, and actual behavior.
-
-## License
-Intel® AI for Enterprise Inference is licensed under the [Apache License Version 2.0](LICENSE). Refer to the "[LICENSE](LICENSE)" file for the full license text and copyright notice.
-
-## Security
-The [Security Policy](SECURITY.md) outlines our guidelines and procedures for ensuring the highest level of security and trust for our users who consume Intel® AI for Enterprise RAG.
-
-## Trademark Information
-Intel, the Intel logo, Xeon, and Gaudi are trademarks of Intel Corporation or its subsidiaries.
-
-* Other names and brands may be claimed as the property of others.
-&copy; Intel Corporation
