@@ -12,7 +12,7 @@ AI foundation models are large, pre-trained AI models that are designed to be ve
 ✅ Observability and Log Aggregation
 ✅ Data Mesh
 ✅ LLM & Model Deployments
-✅ Security and Complince 
+✅ Security and Compliance
 ```
 
 #### Key Components:
