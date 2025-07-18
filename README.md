@@ -26,10 +26,10 @@ AI foundation models are large, pre-trained AI models that are designed to be ve
    
 🧩 Config
 ```
-✅ ***
-✅ ***
-✅ ***
-✅ ***
+***
+***
+***
+***
 ```
 
 
