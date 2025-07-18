@@ -1,6 +1,20 @@
 <img width="1503" height="1218" alt="image" src="https://github.com/user-attachments/assets/4005f41f-ef66-43eb-8553-e99cc3567020" />
 
 
+## Terraform AI-Foundation-Model | 🚀🚀🚀 
+AI foundation models are large, pre-trained AI models that are designed to be versatile and adaptable, capable of performing a wide range of tasks on specific data source. 
+   
+🎯 Features 
+```
+✅ Kubernetes
+✅ Gaudi Base Operator
+✅ NGINX Controller & APISIX 
+✅ Observability and Log Aggregation
+✅ Data Mesh
+✅ LLM & Model Deployments
+✅ Security and Complince 
+```
+
 #### Key Components:
    - **Kubernetes**: A powerful container orchestration platform that automates the deployment, scaling, and management of containerized applications, ensuring high availability and efficient resource utilization.
    - **Gaudi Base Operator**: A specialized operator that manages the lifecycle of Habana AI resources within the Kubernetes cluster, enabling efficient utilization of Intel® Gaudi® hardware for AI workloads. (Applicable only to Gaudi based deployments)
