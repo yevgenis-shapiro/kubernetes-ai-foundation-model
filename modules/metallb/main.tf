@@ -1,12 +1,13 @@
 
 resource "helm_release" "metallb" {
-  name             = "metallb"
-  repository       = "https://metallb.github.io/metallb"
-  chart            = "metallb"
-  namespace        = "metallb-system"
-  version          = "0.14.8"
+  name = "metallb"
+  repository = "https://metallb.github.io/metallb"
+  chart = "metallb"
+  namespace = "metallb-system"
+  version = "0.14.8"
   create_namespace = true
-  timeout          = 300
+  timeout = 300
+  skip_crds        = false  # ✅ CRDs will be installed
 
   values = [
     <<EOT
@@ -19,4 +20,5 @@ configInline:
 EOT
   ]
 }
+
 
