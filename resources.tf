@@ -19,7 +19,7 @@ module "nginx" {
 
 module "metallb" {
   source = "./modules/metallb"
-  depends_on = [module.nginx]
+  depends_on = [kind_cluster.default]
 }
 
 module "argo" {
