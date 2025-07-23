@@ -1,4 +1,3 @@
-
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
@@ -6,15 +5,13 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-  - 172.18.255.1-172.18.255.250
+    - 172.18.255.100-172.18.255.120
 
 ---
 
 apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
-  name: l2advertisement
+  name: advert
   namespace: metallb-system
-spec:
-  ipAddressPools:
-  - default
+spec: {}
