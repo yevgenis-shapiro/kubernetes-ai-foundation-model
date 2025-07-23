@@ -16,10 +16,33 @@ resource "helm_release" "metallb" {
 #  ]
 }
 
-resource "local_file" "metallb_config" {
-  content = templatefile("${path.module}/metallb.config.crd.tmpl", {
-    metallb_ip_range = var.metallb_ip_range
-  })
-  filename   = "${path.module}/metallb.config.crd.yaml"
+resource "kubernetes_manifest" "ip_pool" {
+  manifest = {
+    apiVersion = "metallb.io/v1beta1"
+    kind       = "IPAddressPool"
+    metadata = {
+      name      = "default"
+      namespace = "metallb-system"
+    }
+    spec = {
+      addresses = ["172.18.255.100-172.18.255.120"]
+    }
+  }
+
   depends_on = [helm_release.metallb]
 }
+
+resource "kubernetes_manifest" "l2_advertisement" {
+  manifest = {
+    apiVersion = "metallb.io/v1beta1"
+    kind       = "L2Advertisement"
+    metadata = {
+      name      = "advertisement"
+      namespace = "metallb-system"
+    }
+    spec = {} # empty is valid
+  }
+
+  depends_on = [helm_release.metallb]
+}
+
