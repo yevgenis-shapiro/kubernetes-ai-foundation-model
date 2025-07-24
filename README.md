@@ -24,12 +24,11 @@ AI foundation models are large, pre-trained AI models that are designed to be ve
    - **Observability**: An open-source monitoring solution designed to operate natively within Kubernetes clusters, providing comprehensive visibility into the performance, health, and resource utilization of deployed applications and cluster components through metrics, visualization, and alerting capabilities.
    - **Model Deployments**: Automated deployment and management of AI LLM models within the Kubernetes inference cluster, enabling scalable and reliable AI inference capabilities.
    
-🧩 Config
+🔨 Example :
 ```
 terraform init
 terraform validate
-terraform plan -var-file="template.tfvars"
-terraform apply -var-file="template.tfvars" -auto-approve
+terraform apply -auto-approve
 ```
 
 
