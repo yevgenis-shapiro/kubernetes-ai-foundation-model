@@ -4,7 +4,7 @@ resource "helm_release" "metallb" {
   repository = "https://metallb.github.io/metallb"
   chart = "metallb"
   namespace = "metallb-system"
-  version = "0.14.8"
+  version = "0.13.10"
   create_namespace = true
   timeout = 300
   skip_crds        = false  # ✅ CRDs will be installed
