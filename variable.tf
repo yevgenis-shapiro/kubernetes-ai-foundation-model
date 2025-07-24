@@ -17,14 +17,3 @@ variable "kind_version" {
   type        = string
 }
 
-variable "devtron_helm_version" {
-  type        = string
-  description = "The Helm version for the nginx ingress controller."
-  default     = "0.22.51"
-}
-
-variable "devtron_namespace" {
-  type        = string
-  description = "The nginx ingress namespace (it will be created if needed)."
-  default     = "devtroncd"
-}
