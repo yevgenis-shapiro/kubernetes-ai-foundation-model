@@ -12,14 +12,14 @@ provider "helm" {
   }
 }
 
-module "nginx" {
-  source = "./modules/nginx"
-  depends_on = [kind_cluster.default]
-}
-
 module "metallb" {
   source = "./modules/metallb"
   depends_on = [kind_cluster.default]
+}
+
+module "nginx" {
+  source = "./modules/nginx"
+  depends_on = [module.metallb]
 }
 
 module "argo" {
@@ -29,5 +29,5 @@ module "argo" {
 
 module "kyverno" {
   source = "./modules/kyverno"
-  depends_on = [module.argo]
+  depends_on = [module.nginx]
 }
