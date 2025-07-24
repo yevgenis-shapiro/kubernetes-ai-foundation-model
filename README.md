@@ -26,10 +26,10 @@ AI foundation models are large, pre-trained AI models that are designed to be ve
    
 🧩 Config
 ```
-***
-***
-***
-***
+terraform init
+terraform validate
+terraform plan -var-file="template.tfvars"
+terraform apply -var-file="template.tfvars" -auto-approve
 ```
 
 
