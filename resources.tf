@@ -12,6 +12,16 @@ provider "helm" {
   }
 }
 
+provider "kubernetes" {
+  config_path = "~/.kube/config" # or use config_context or in-cluster config
+}
+
+resource "kubernetes_namespace" "metallb" {
+  metadata {
+    name = "metallb-system"
+  }
+}
+
 module "metallb" {
   source = "./modules/metallb"
   depends_on = [kind_cluster.default]
