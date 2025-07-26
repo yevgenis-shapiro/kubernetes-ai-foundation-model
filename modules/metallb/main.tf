@@ -1,4 +1,14 @@
 
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
+resource "kubernetes_namespace" "metallb" {
+  metadata {
+    name = "metallb-system"
+  }
+}
+
 resource "helm_release" "metallb" {
   name             = "metallb"
   repository       = "https://metallb.github.io/metallb"
