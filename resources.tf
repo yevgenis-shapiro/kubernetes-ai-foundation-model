@@ -14,11 +14,11 @@ provider "helm" {
 
 module "config" {
   source = "./modules/config"
-  depends_on = [kind_cluster.default]
 }
 
 module "metallb" {
   source = "./modules/metallb"
+  depends_on = [module.config]
 }
 
 module "nginx" {
