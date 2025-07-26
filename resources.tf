@@ -12,13 +12,8 @@ provider "helm" {
   }
 }
 
-module "config" {
-  source = "./modules/config"
-}
-
 module "metallb" {
   source = "./modules/metallb"
-  depends_on = [module.config]
 }
 
 module "nginx" {
