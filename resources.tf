@@ -14,7 +14,7 @@ provider "helm" {
 
 module "metallb" {
   source = "./modules/metallb"
-  depends_on = [kind_cluster.default]
+  #depends_on = [kind_cluster.default]
 }
 
 module "nginx" {
