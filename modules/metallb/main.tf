@@ -6,6 +6,10 @@ resource "kubernetes_namespace" "metallb" {
   metadata {
     name = "metallb-system"
   }
+
+depends_on = [
+    kind_cluster.default
+  ]
 }
 
 resource "helm_release" "metallb" {
