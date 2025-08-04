@@ -4,7 +4,7 @@
 ## Terraform AI-Foundation-Model | 🚀🚀🚀 
 AI foundation models are large, pre-trained AI models that are designed to be versatile and adaptable, capable of performing a wide range of tasks on specific data source. 
    
-#### Key Components:
+#### 🧱 Key Components:
    - **Kubernetes**: A powerful container orchestration platform that automates the deployment, scaling, and management of containerized applications, ensuring high availability and efficient resource utilization.
    - **Gaudi Base Operator**: A specialized operator that manages the lifecycle of Habana AI resources within the Kubernetes cluster, enabling efficient utilization of Intel® Gaudi® hardware for AI workloads. (Applicable only to Gaudi based deployments)
    - **Ingress NGINX Controller**: A high-performance reverse proxy and load balancer for traffic, responsible for routing incoming requests to the appropriate services within the Kubernetes cluster, ensuring seamless access to deployed AI models.
@@ -25,7 +25,8 @@ AI foundation models are large, pre-trained AI models that are designed to be ve
 ```
 terraform init
 terraform validate
-terraform apply -auto-approve
+terraform plan -var-file="template.tfvars"
+terraform apply -var-file="template.tfvars" -auto-approve
 ```
 
 
