@@ -10,7 +10,7 @@ module "nginx" {
   depends_on = [null_resource.k3s_status] 
 }
 
-module "argo-events" {
-  source = "./modules/argo-events"
+module "argo" {
+  source = "./modules/argo"
   depends_on = [null_resource.k3s_status] 
 }
