@@ -1,19 +1,16 @@
 
-variable "cluster_name" {
-  description = "The kind cluster name."
-  default     = "cluster"
-  type        = string
+variable "k3s_version" {
+  type    = string
+  default = "v1.29.3+k3s1"
 }
 
-variable "kind_cluster_config_path" {
-  type        = string
-  description = "The location where this cluster's kubeconfig will be saved to."
-  default     = "~/.kube/config"
+variable "node_role" {
+  type    = string
+  default = "server"
 }
 
-variable "kind_version" {
-  description = "The kind version of kubernetes."
-  default     = "v1.31.4"
-  type        = string
+variable "disable_components" {
+  type    = string
+  default = "--disable traefik --disable local-storage"
 }
 
