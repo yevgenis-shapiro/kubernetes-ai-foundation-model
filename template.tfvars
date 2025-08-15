@@ -1,6 +1,7 @@
 
 ###  ---  Default Template  ---  ###
-k3s_version = "v1.31.3+k3s1"
-node_role   = "server"
-# Components to disable (space-separated)
-disable_components = "--disable traefik --disable local-storage"
+kind_cluster_name        = "dev-cluster"
+kind_cluster_config_path = "~/.kube/config"
+k8s_version              = "v1.31.0"
+additional_control_planes_count = 0
+worker_count = 0
