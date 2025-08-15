@@ -32,3 +32,5 @@ resource "helm_release" "keycloak" {
     name  = "postgresql.auth.existingSecret"
     value = ""
   }
+
+
