@@ -9,6 +9,16 @@ resource "helm_release" "keycloak" {
   # depends_on     = [helm_release.mariadb-galera]
 
   set {
+    name  = "auth.adminUser"
+    value = "admin"
+  }
+
+  set {
+    name  = "auth.adminPassword"
+    value = "SuperSecurePassword123!"
+  }
+
+  set {
     name  = "postgresql.enabled"
     value = "true"
   }
