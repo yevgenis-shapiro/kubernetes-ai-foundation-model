@@ -23,8 +23,8 @@ module "nginx" {
   depends_on = [module.metallb]
 }
 
-module "flowise" {
-  source = "./modules/flowise"
+module "argo" {
+  source = "./modules/argo"
   depends_on = [module.nginx]
 }
 
