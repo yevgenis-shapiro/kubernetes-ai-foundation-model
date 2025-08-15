@@ -1,7 +1,7 @@
 <img width="1503" height="1218" alt="image" src="https://github.com/user-attachments/assets/6a50e554-028e-45ef-b336-7e9273c48fe2" />
 
 
-## Local AI-Foundation-Model | 🚀🚀🚀 
+## Bare Metal AI-Foundation-Model | 🚀🚀🚀 
 Unleash the power of AI Inference anywhere. AI foundation models are large, pre-trained AI models that are designed to be versatile and adaptable, capable of performing a wide range of tasks on specific data source. It supports a broad range of hardware platforms, including multi cloud enviroment , ensuring flexibility and scalability to meet diverse enterprise needs.
 
    
