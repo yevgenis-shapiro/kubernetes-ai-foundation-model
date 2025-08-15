@@ -30,6 +30,6 @@ resource "helm_release" "keycloak" {
 
   set {
     name  = "postgresql.auth.existingSecret"
-    value = ""
+    value = "SuperSecurePassword123!"
   }
 }
