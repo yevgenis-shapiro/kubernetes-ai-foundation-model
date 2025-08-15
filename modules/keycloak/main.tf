@@ -6,7 +6,7 @@ resource "helm_release" "keycloak" {
   namespace        = "default"
   create_namespace = true
   timeout          = 300
-  #depends_on = [helm_release.mariadb-galera]
+  # depends_on     = [helm_release.mariadb-galera]
 
   set {
     name  = "postgresql.enabled"
@@ -32,5 +32,4 @@ resource "helm_release" "keycloak" {
     name  = "postgresql.auth.existingSecret"
     value = ""
   }
-
-
+}
