@@ -49,3 +49,4 @@ resource "null_resource" "wait_for_kyverno" {
 
   depends_on = [helm_release.kyverno]
 }
+
