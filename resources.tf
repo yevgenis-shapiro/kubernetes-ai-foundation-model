@@ -25,8 +25,8 @@ module "argo" {
   source = "./modules/argo"
   depends_on = [module.nginx]
 }
-module "anythingllm" {
-  source = "./modules/anythingllm"
+module "llm" {
+  source = "./modules/llm"
   depends_on = [module.nginx]
 }
 
