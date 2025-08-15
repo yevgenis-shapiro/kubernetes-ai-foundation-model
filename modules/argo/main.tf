@@ -8,7 +8,7 @@ resource "helm_release" "argocd" {
   create_namespace = true
   timeout    = 300
   values = [
-    file("./argo-values.yaml")
+    file("./modules/argo/argo-values.yaml")
   ]
 }
 
