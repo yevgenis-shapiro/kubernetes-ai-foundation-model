@@ -1,4 +1,4 @@
-<img width="1503" height="1218" alt="image" src="https://github.com/user-attachments/assets/4005f41f-ef66-43eb-8553-e99cc3567020" />
+<img width="1503" height="1218" alt="image" src="https://github.com/user-attachments/assets/6a50e554-028e-45ef-b336-7e9273c48fe2" />
 
 
 ## Terraform AI-Foundation-Model | 🚀🚀🚀 
