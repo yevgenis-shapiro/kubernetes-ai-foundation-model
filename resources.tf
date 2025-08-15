@@ -21,13 +21,17 @@ module "nginx" {
   source = "./modules/nginx"
   depends_on = [module.metallb]
 }
+module "api" {
+  source = "./modules/api"
+  depends_on = [module.nginx]
+}
 module "argo" {
   source = "./modules/argo"
-  depends_on = [module.nginx]
+  depends_on = [module.api]
 }
 module "llm" {
   source = "./modules/llm"
-  depends_on = [module.nginx]
+  depends_on = [module.api]
 }
 
 
