@@ -1,36 +1,67 @@
 
-terraform {
-  required_providers {
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.0"
+provider "kind" {
+}
+
+provider "kubernetes" {
+  config_path = pathexpand(var.kind_cluster_config_path)
+}
+
+resource "kind_cluster" "default" {
+  name            = var.kind_cluster_name
+  kubeconfig_path = pathexpand(var.kind_cluster_config_path)
+  wait_for_ready  = true
+
+  kind_config {
+    kind        = "Cluster"
+    api_version = "kind.x-k8s.io/v1alpha4"
+
+    node {
+      role  = "control-plane"
+      image = "kindest/node:${var.k8s_version}"
+
+      kubeadm_config_patches = [
+        <<-EOT
+        kind: InitConfiguration
+        nodeRegistration:
+          kubeletExtraArgs:
+            node-labels: "ingress-ready=true"
+        EOT
+      ]
+
+      extra_port_mappings {
+        container_port = 80
+        host_port      = 80
+      }
+
+      extra_port_mappings {
+        container_port = 443
+        host_port      = 443
+      }
+    }
+
+    # Additional control planes for HA
+    dynamic "node" {
+      for_each = toset(range(var.additional_control_planes_count))
+      content {
+        role  = "control-plane"
+        image = "kindest/node:${var.k8s_version}"
+      }
+    }
+    # Additional workers
+    dynamic "node" {
+      for_each = toset(range(var.worker_count))
+      content {
+        role  = "worker"
+        image = "kindest/node:${var.k8s_version}"
+      }
     }
   }
 }
 
-provider "null" {}
+resource "null_resource" "export_kubeconfig" {
+  depends_on = [kind_cluster.default]
 
-resource "null_resource" "install_k3s" {
   provisioner "local-exec" {
-    command = "export K3S_EXEC_FLAGS='--disable=traefik --disable=local-storage' && bash ./modules/k3s/install_k3s.sh ${var.node_role} ${var.k3s_version}"
+    command = "echo 'export KUBECONFIG=${kind_cluster.default.kubeconfig_path}' >> ~/.bashrc"
   }
-
-  triggers = {
-    always_run = "${timestamp()}"
-
-  }
-}
-
-resource "null_resource" "k3s_config" {
-  provisioner "local-exec" {
-    command = "mkdir -p ~/.kube/ && cp -r /etc/rancher/k3s/k3s.yaml ~/.kube/config"
-  }
-  depends_on = [null_resource.install_k3s]
-}
-
-resource "null_resource" "k3s_status" {
-  provisioner "local-exec" {
-    command = "sleep 5 && systemctl status k3s | grep -v k3s 2>/dev/null"
-  }
-  depends_on = [null_resource.k3s_config]
 }
