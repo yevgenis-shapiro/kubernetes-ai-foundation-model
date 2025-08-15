@@ -2,7 +2,7 @@
 
 
 ## Bare Metal AI-Foundation-Model | 🚀🚀🚀 
-Unleash the power of AI Inference anywhere. AI foundation models are large, pre-trained AI models that are designed to be versatile and adaptable, capable of performing a wide range of tasks on specific data source. It supports a broad range of hardware platforms, including multi cloud enviroment , ensuring flexibility and scalability to meet diverse enterprise needs.
+Unleash the power of AI Inference anywhere. AI foundation models are large, pre-trained AI models that are designed to be versatile and adaptable, capable of performing a wide range of tasks on specific data source. It supports a broad range of hardware platforms, including multi cloud providers , ensuring flexibility and scalability to meet diverse enterprise needs.
 
    
 #### 🧱 Key Components:
